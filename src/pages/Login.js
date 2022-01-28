@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from 'axios';
 
 class Login extends Component{
 
@@ -15,9 +16,13 @@ class Login extends Component{
       });
   };
   handleOnClick = (e) => {
-      console.log(this.state.id, this.state.password);
+      console.log('click login')
+      console.log('ID :', this.state.id)
+      console.log('PW :', this.state.password)
+      axios.post(this.state.id, this.state.password);
       this.login()
   }
+
   login = () => {
     fetch('/api/login',{method: 'POST',
     headers : {
@@ -29,15 +34,26 @@ class Login extends Component{
             password: this.state.password
       })
     })
-    .then(response => response.text())
+    /*.then(response => response.text())
     .then(message => {
       this.setState({message: message});
       console.log("response : "+this.state.message);
-    });
+    });*/
+    .then(response=>{
+      console.log(response)
+      console.log('response.data.userId')
+      console.log('response.data.msg ::',response.formData.msg)
+      if(response.data.userId === undefined){
+        console.log('==========',response.data.msg)
+        alert('입력하신 id 가 일치하지 않습니다.')
+      }
+    })
   }
 
   render(){
+    
     return (
+   
       <div className="App">
 
         <form className="LoginForm">
