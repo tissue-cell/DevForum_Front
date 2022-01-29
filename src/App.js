@@ -8,12 +8,14 @@ import "swiper/components/navigation/navigation.scss";
 import "swiper/components/pagination/pagination.scss";
 import "./styles/main.css"
 import MainPage from './pages/Main';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
       <Nav />
+      <Sidebar />
         <Routes>
           <Route path="/" element={<Index />}/>
           <Route path="/login" element={<Login />}/>

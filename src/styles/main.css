@@ -23,6 +23,7 @@
         padding: 1em;    
     }
     .firstwrapper{
+        margin-left: 5em;
         width:40% ;
         margin-right: 3%;
         position: relative;
@@ -91,7 +92,7 @@
     }
     .swiper-container{
         background-color: #eee;
-        width: 90%;
+        width: 60%;
         height: 400px;
     }
     .swiper-button-prev{
