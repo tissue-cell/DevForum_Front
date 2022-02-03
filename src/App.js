@@ -4,7 +4,7 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Index from './pages/Index';
 import Login from './pages/Login';
 import MainPage from './pages/Main';
-import JoinUs from './pages/joinus';
+import JoinUs from './pages/Joinus';
 
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
@@ -13,14 +13,13 @@ import "swiper/components/pagination/pagination.scss";
 import "./styles/main.css"
 import "./styles/login.css"
 // components
-import Nav from './components/Nav';
+//import Nav from './components/Nav';
 import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
-      <Nav />
       <Sidebar />
         <Routes>
           <Route path="/" element={<Index />}/>

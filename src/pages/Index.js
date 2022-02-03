@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import logo from '../logo.svg';
 import '../App.css';
+import Sidebar from '../components/Sidebar';
+import MainPage from './Main';
 
 class Index extends Component{
   state = {
@@ -19,7 +21,7 @@ class Index extends Component{
     clearInterval(this.interval)
   }
   //csrf토큰 예제
-  hello = () => {
+ /* hello = () => {
     fetch('api/hello',{method: 'POST',
     headers : {
       'X-XSRF-TOKEN': this.state.csrfToken,
@@ -29,14 +31,11 @@ class Index extends Component{
       this.setState({message: message});
     });
   }
+  */
   render(){
     return (
       <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo"/>
-      <h1 className="App-title">{this.state.message}</h1>
-      </header>
-      <a></a>
+        <MainPage/>
       </div>
     );
   }

@@ -9,7 +9,7 @@ function JoinUs() {
 
                 <div id="register_agree">
                     <h3>약관 동의</h3>
-                    <p style="margin: 10px 0;">회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
+                    <p>회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
                     <div id="fregister_chkall" class="checks2">
                         <input type="checkbox" name="chk_all" value="1" id="chk_all" />
                         <label for="chk_all">회원가입 약관에 모두 동의합니다</label>
