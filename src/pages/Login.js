@@ -16,43 +16,21 @@ class Login extends Component {
     });
   };
   handleOnClick = (e) => {
-    console.log('click login')
-    console.log('ID :', this.state.id)
-    console.log('PW :', this.state.password)
-    axios.post(this.state.id, this.state.password);
-    this.login()
-  }
-
-  login = () => {
-    fetch('/api/login', {
-      method: 'POST',
-      headers: {
-        'X-XSRF-TOKEN': this.state.csrfToken,
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        id: this.state.id,
-        password: this.state.password
-      })
-    })
-      /*.then(response => response.text())
-      .then(message => {
-        this.setState({message: message});
-        console.log("response : "+this.state.message);
-      });*/
+    axios.post('/api/login',{'id':this.state.id, 'password':this.state.password})
       .then(response => {
-        console.log(response)
-        console.log('response.data.userId')
-        console.log('response.data.msg ::', response.formData.msg)
-        if (response.data.userId === undefined) {
-          console.log('==========', response.data.msg)
-          alert('입력하신 id 가 일치하지 않습니다.')
+        if (response.status == 200) {
+          axios.defaults.headers.common['Authorization'] = `Bearer ${response.headers.access_token}`;
+          
+        }else if(response.status == 401){
+          alert('입력하신 ID 혹은 비밀번호가 일치하지 않습니다.');
+        }else{
+          alert('서버 오류입니다. 다시 시도해주세요.');
         }
-      })
+      });
   }
 
   render() {
-
+    delete axios.defaults.headers.common['Authorization'];
     return (
 
       <div className="App">

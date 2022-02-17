@@ -3,10 +3,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {Pagination,Autoplay} from "swiper"
 import number_01 from '../img/1.png'
 import number_02 from '../img/2.png'
+import axios from 'axios'
 
 SwiperCore.use([ Pagination, Autoplay])
 
- function MainPage() {
+function getUserData(){
+    axios.get('/api/getuser').then(response => {
+        console.log(response.data.sub);
+        
+        return response.data.sub;
+      })
+}
+
+function MainPage() {
+    getUserData();
     return(
         <><div className='swiper-container'>
             <Swiper
