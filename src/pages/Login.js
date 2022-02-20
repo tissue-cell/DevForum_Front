@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 function LoginPage(){
+  const navigate = useNavigate();
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const handleOnClick = (e) => {
@@ -10,6 +12,7 @@ function LoginPage(){
       .then(response => {
         console.log(response)
         if (response.status == 200) {
+          navigate(-1);
           axios.defaults.headers.common['Authorization'] = `Bearer ${response.headers.access_token}`;
         }
       })
@@ -43,7 +46,6 @@ function LoginPage(){
             </div>
           </div>
           <div>
-            <a className="link_info" href="">아이디 찾기</a>
             <a className="link_info" href="">비밀번호 찾기</a>
             <a className="link_info" href="/joinus">회원가입</a>
           </div>

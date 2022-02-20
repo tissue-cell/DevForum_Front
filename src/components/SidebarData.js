@@ -9,7 +9,7 @@ export const SidebarData = [
   },
   {
     title: 'Login',
-    path: '/Login',
+    path: '/login',
     icon: <BsIcons.BsFillInfoCircleFill />,
     cName: 'nav-text'
   },
