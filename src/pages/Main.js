@@ -10,13 +10,11 @@ SwiperCore.use([ Pagination, Autoplay])
 function getUserData(){
     axios.get('/api/getuser').then(response => {
         console.log(response.data.sub);
-        
         return response.data.sub;
       })
 }
 
 function MainPage() {
-    getUserData();
     return(
         <><div className='swiper-container'>
             <Swiper
@@ -64,10 +62,9 @@ function MainPage() {
                                 </div>
                             </div>
                         </div>
-                    
+
 
                 </div>
             </div></>
     )}
-    export default MainPage;         
-            
+    export default MainPage;
