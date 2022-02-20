@@ -3,6 +3,7 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom';
 // pages line
 import Index from './pages/Index';
 import Login from './pages/Login';
+import MainPage from './pages/Main';
 import JoinUs from './pages/Joinus';
 
 import "swiper/swiper.scss";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Index />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/*" element={<Index />}/>
+          <Route path="/main" element={<MainPage/>}/>
           <Route path="/joinus" element={<JoinUs/>}/>
         </Routes>
       </BrowserRouter>

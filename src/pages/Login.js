@@ -11,14 +11,14 @@ function LoginPage(){
     axios.post('/api/login',{'id': id, 'password': password})
       .then(response => {
         console.log(response)
-        if (response.status == 200) {
-          navigate(-1);
+        if (response.status === 200) {
+          navigate('/');
           axios.defaults.headers.common['Authorization'] = `Bearer ${response.headers.access_token}`;
         }
       })
       .catch(error => {
         console.log(error.response);
-        if(error.response.status == 401){
+        if(error.response.status === 401){
           alert('입력하신 ID 혹은 비밀번호가 일치하지 않습니다.');
         }else{
           alert('서버 오류입니다. 다시 시도해주세요.');
