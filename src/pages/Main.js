@@ -23,7 +23,7 @@ function MainPage() {
                 slidesPerView={1}
                 navigation
                 pagination={{ clickable: true }}
-                autoplay={{ delay: 3000 }}
+                autoplay={{ delay: 5000 }}
             >
                 <SwiperSlide className='slide'><img className='first-banner' alt='number_01' img src={number_01}></img></SwiperSlide>
                 <SwiperSlide className='slide'><img className='second-banner' alt='number_02' img src={number_02}></img></SwiperSlide>
