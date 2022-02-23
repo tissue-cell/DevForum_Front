@@ -20,9 +20,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Sidebar>
-        안녕하세요 OOO님
-      </Sidebar>
+      <Sidebar />
         <Routes>
           <Route path="/" element={<Index />}/>
           <Route path="/login" element={<Login />}/>
