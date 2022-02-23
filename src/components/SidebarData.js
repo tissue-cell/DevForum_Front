@@ -9,21 +9,9 @@ export const SidebarData = [
   },
   {
     title: 'Login',
-    path: '/login',
-    icon: <BsIcons.BsFillInfoCircleFill />,
-    cName: 'nav-text',
-  },
-  {
-    title: 'Logout',
-    path: '/logout',
-    icon: <BsIcons.BsFillInfoCircleFill />,
-    cName: 'nav-text',
-  },
-  {
-    title: 'TestPage',
-    path: '/test-page',
+    path: '/Login',
     icon: <BsIcons.BsFillInfoCircleFill />,
     cName: 'nav-text'
-  }
+  },
 
 ];

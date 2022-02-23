@@ -4,11 +4,8 @@ import SwiperCore, {Pagination,Autoplay} from "swiper"
 import number_01 from '../img/1.png'
 import number_02 from '../img/2.png'
 import axios from 'axios'
-import { useSelector } from "react-redux";
 
 SwiperCore.use([ Pagination, Autoplay])
-
-
 
 function getUserData(){
     axios.get('/api/getuser').then(response => {
