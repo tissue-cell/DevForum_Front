@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-
-
+import { useNavigate,useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {setToken} from '../actions'
 function LoginPage(){
+  const dispatch = useDispatch();
+
+  const RouterContext = React.createContext();
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const handleOnClick = (e) => {
@@ -12,7 +17,10 @@ function LoginPage(){
       .then(response => {
         console.log(response)
         if (response.status === 200) {
-          navigate('/');
+          dispatch(setToken(response.headers.access_token));
+          // navigate('/');
+          console.log(RouterContext)
+          console.log(location)
           axios.defaults.headers.common['Authorization'] = `Bearer ${response.headers.access_token}`;
         }
       })
@@ -25,7 +33,7 @@ function LoginPage(){
         }
       });
   }
-    delete axios.defaults.headers.common['Authorization'];
+    // delete axios.defaults.headers.common['Authorization'];
     return (
       <div className="App">
 
