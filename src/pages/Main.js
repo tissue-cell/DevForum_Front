@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {Pagination,Autoplay} from "swiper"
-import number_01 from '../img/1.png'
-import number_02 from '../img/2.png'
+import number_01 from '../resource/img/1.png'
+import number_02 from '../resource/img/2.png'
 import axios from 'axios'
 import { useSelector } from "react-redux";
 
