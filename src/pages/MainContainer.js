@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import logo from '../logo.svg';
-import '../App.css';
-import Sidebar from '../components/Sidebar';
+import logo from '../resource/img/logo.svg';
+import '../styles/App.css';
 import MainPage from './Main';
 import axios from 'axios';
 

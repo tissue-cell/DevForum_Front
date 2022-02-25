@@ -4,10 +4,10 @@ import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
-import '../styles/Sidebar.css'
+import '../../styles/Sidebar.css'
 import styled from 'styled-components';
 import oc from 'open-color';
-import { shadow, media } from '././styleUtil';
+import { shadow, media } from './styleUtil';
 
 // 상단 고정, 그림자
 const Positioner = styled.div`
