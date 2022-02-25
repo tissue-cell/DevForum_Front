@@ -4,10 +4,12 @@ import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import { IconContext } from 'react-icons';
+import axios from 'axios';
 import '../../styles/Sidebar.css'
 import styled from 'styled-components';
 import oc from 'open-color';
-import { shadow, media } from './styleUtil';
+import { shadow, media } from '././styleUtil';
+import { useSelector } from "react-redux";
 
 // 상단 고정, 그림자
 const Positioner = styled.div`
@@ -37,7 +39,7 @@ const HeaderContents = styled.div`
 
     padding-right: 1rem;
     padding-left: 1rem;
-    
+
     ${media.wide`
         width: 992px;
     `}
@@ -69,6 +71,8 @@ const GradientBorder = styled.div`
 function Sidebar(props) {
     const [Sidebar, setSidebar] = useState(false);
     const showSidebar = ()=> setSidebar(!Sidebar);
+    const user = useSelector(state => state.user)
+    console.log(user)
     return (
         <>
         <Positioner>
@@ -96,6 +100,11 @@ function Sidebar(props) {
                   </Link>
                 </li>
                 {SidebarData.map((item, index) => {
+                  if(item.path=='/login'&&user.isLogin==true){
+
+                  }else if(item.path=='/logout'&&user.isLogin==false){
+
+                  }else
                   return (
                     <li key={index} className={item.cName}>
                       <Link to={item.path}>
@@ -104,14 +113,15 @@ function Sidebar(props) {
                       </Link>
                     </li>
                   );
-                })}
+                })
+              }
               </ul>
             </nav>
             </IconContext.Provider>
         </>
       );
     }
-            
 
-  
+
+
 export default Sidebar;

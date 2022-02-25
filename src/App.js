@@ -5,6 +5,7 @@ import Index from './pages/MainContainer';
 import Login from './pages/Login';
 import MainPage from './pages/Main';
 import JoinUs from './pages/Joinus';
+import Test from './pages/Test';
 
 import "swiper/swiper.scss";
 import "swiper/components/navigation/navigation.scss";
@@ -26,6 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Index />}/>
           <Route path="/login" element={<Login />}/>
+          <Route path="/test-page" element={<Test />}/>
           <Route path="/*" element={<Index />}/>
           <Route path="/main" element={<MainPage/>}/>
           <Route path="/joinus" element={<JoinUs/>}/>
