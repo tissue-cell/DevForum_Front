@@ -16,13 +16,14 @@ import "./styles/login.css"
 // components
 //import Nav from './components/Nav';
 import Sidebar from './components/header/Sidebar';
+import LoginButton from './components/header/LoginButton'
 
 function App() {
   return (
     <div>
       <BrowserRouter>
       <Sidebar>
-        안녕하세요 OOO님
+        <LoginButton />
       </Sidebar>
         <Routes>
           <Route path="/" element={<Index />}/>
